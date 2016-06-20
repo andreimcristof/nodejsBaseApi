@@ -1,23 +1,32 @@
 # Item Service api
-This application is intended as a skeleton node.js API that interacts with a Rethink Database on its endpoints.
+This application is intended as a basic, skeleton node.js API that interacts with a Rethink Database on its endpoints.
+
+
+### Starting up
+
+In the service-api folder, run these commands:  
+**npm install**  (this will install dependencies)  
+**nodemon** (this will start app)
+
 
 ### Prerequisites
 You will need to have Docker installed, so that you can run a Docker terminal locally, on your machine. Docker can be used on any Operating System.
 
-To install Docker and learn about it please visit this page  
+To install Docker and/or learn about it please visit this page  
 https://www.docker.com/
 
 
 ## Characteristics
 * This API listens to port 1337, so you can use your favorite REST client to call its endpoints at  
 http://localhost:1337/
-* the middlewares used are:
-    1. corsHandler - this allows cross origin resource sharing and should be customised as needed
-    2. cacheHandler - disables caching on routes
-    3. requestValidator - this checks that content is application/json if the verb of request is PUT, POST or PATCH.
-    4. Also error logging is toggled according to environmentLevel (see logger.js)
-    5. There is no authentication for the moment, but I can add a jsonwebtoken handler if
-    I get any feedback on this API that someone needs it.
+* The middlewares used are:
+    1. *corsHandler* - this allows cross origin resource sharing and should be customised as needed
+    2. *cacheHandler* - disables caching on routes
+    3. *requestValidator* - this checks that content is application/json if the verb of request is PUT, POST or PATCH.
+* Also error logging is toggled according to environmentLevel (see logger.js)
+* There is no authentication for the moment, but I can add a jsonwebtoken handler if I get any feedback on this API that someone needs it.
+* There is a model validation when creating / updating objects, this
+validation can be customised as needed for your objects. The file modelValidation/item.js contains an example of how an object is validated.
 
 ## Endpoints
 
