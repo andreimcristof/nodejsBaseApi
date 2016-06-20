@@ -1,5 +1,6 @@
 # Item Service api
-This application is intended as a basic, skeleton node.js API that interacts with a Rethink Database on its endpoints.
+This application is intended as a basic, Node.js API that can serve as a skeleton for your requirements.  
+It offers CRUD operations on a Rethink Database and does object model validation.
 
 
 ### Starting up
@@ -10,7 +11,7 @@ In the service-api folder, run these commands:
 
 
 ### Prerequisites
-You will need to have Docker installed, so that you can run a Docker terminal locally, on your machine. Docker can be used on any Operating System.
+You will need to have Docker installed, so that you can run a Docker terminal locally, on your machine. This is required for the Rethink database. Docker can be used on any Operating System.
 
 To install Docker and/or learn about it please visit this page  
 https://www.docker.com/
@@ -50,11 +51,11 @@ CRUD (create, read, update, delete) operations are offered on the endpoints, as 
 **Method**  PUT  
 **Headers**  Content-Type: application/json  
 **Body example**
-> ```
+>   
 {
   "date" :  { "start" : "2016-06-09T15:05:20.160Z", "end" : "2016-06-09T15:05:20.160Z" },
   "content": "YOLO"
-}```
+}
 
 **Response:** the inserted item with its ID
 
@@ -64,12 +65,12 @@ CRUD (create, read, update, delete) operations are offered on the endpoints, as 
 **Method**  PATCH  
 **Headers**  Content-Type: application/json  
 **Body example**
-> ```
+>   
 {
   "id": "4a6593b9-689b-4ccc-ab40-9153bcb222c4",
   "date" :  { "start" : "2016-06-09T15:05:20.160Z", "end" : "2016-06-09T15:05:20.160Z" },
   "content": "updated property"
-}```
+}
 
 **Response:** the updated item, or empty response if no corresponding item for that id was found in database
 
@@ -90,9 +91,9 @@ This api makes use of a Rethink Database Store, which is injected at startup as 
 This assumes you have a running rethinkdb Docker container. You can do this with the following command:
 
 `docker run -p=1338:8080 -p=28015:28015 --name=localRethinkDbStore rethinkdb`  
-(note that this command requires Docker to be installed, please see the prerequisits section above first).
+(note that this command needs to run in a docker terminal, therefore it requires Docker to be installed, please see the prerequisites section above first).
 
 This command downloads the latest rethinkdb image from the Docker public hub (in case you don't have it already), starts it on local, exposes the administration interface on port 1338 , so you can access your database in the browser at  
 http://192.168.99.100:1338/
 
-Once the rethinkdb container is running, note that the API itself uses port 28015 (the RethinkDb default) to communicate. But the administration UI of Rethink can be accessed at the address above.
+Once the rethinkdb container is running, note that the API itself uses port 28015 (the RethinkDb default) to communicate with the database. But the administration UI of Rethink can be accessed at the address above.
