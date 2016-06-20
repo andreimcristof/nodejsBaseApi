@@ -1,0 +1,21 @@
+{
+  "name": "itemService-api",
+  "main": "server.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.13.4",
+    "express-validation": "^0.6.0",
+    "bluebird": "3.3.5",
+    "body-parser": "1.15.0",
+    "joi": "^8.0.5",
+    "morgan": "^1.7.0",
+    "nodemon": "1.9.1",
+    "request": "^2.72.0",
+    "rethinkdb": "2.3.0",
+    "jsonwebtoken" : "7.0.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive",
+    "debug": "mocha --recursive --debug-brk"
+  }
+}
